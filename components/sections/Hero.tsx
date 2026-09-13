@@ -40,9 +40,12 @@ const Hero = () => {
                             <img 
                                 src="/mockups/hero-primary.svg" 
                                 alt="Design Agency Mockup" 
-                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
+                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform" 
                             />
-                            <div className="absolute top-0 left-0 w-full h-10 border-b border-brand-neutral/20 bg-brand-secondary/80 backdrop-blur flex items-center justify-between px-4 z-10">
+                            <div className="absolute top-0 left-0 w-full h-10 border-b border-brand-neutral/20 bg-brand-secondary/80 flex items-center justify-between px-4 z-10">
                                  <div className="flex gap-2">
                                      <div className="w-2.5 h-2.5 rounded-full bg-brand-neutral/40"></div>
                                      <div className="w-2.5 h-2.5 rounded-full bg-brand-neutral/40"></div>
@@ -58,9 +61,13 @@ const Hero = () => {
                             <img 
                                 src="/mockups/hero-secondary.svg" 
                                 alt="Digital Experience Mockup" 
-                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="async"
+                                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform" 
                             />
                         </div>
+
 
                         <div className="flex-1 min-h-0 w-full bg-brand-tertiary p-6 lg:p-10 flex flex-col justify-between">
                             <p className="font-label text-xs font-bold tracking-[0.2em] text-brand-secondary  uppercase">

@@ -20,24 +20,16 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
 
     const handleMouseEnter = useCallback(() => {
         if (!cardRef.current || !imgRef.current || !arrowRef.current) return;
-        animate(cardRef.current, { y: -8 }, { type: "spring", stiffness: 300, damping: 20 });
-        animate(imgRef.current, { scale: 1.08 }, { duration: 0.7, ease: [0.22, 1, 0.36, 1] });
+        animate(cardRef.current, { y: -6 }, { type: "spring", stiffness: 300, damping: 20 });
+        animate(imgRef.current, { scale: 1.06 }, { duration: 0.5, ease: [0.22, 1, 0.36, 1] });
         animate(arrowRef.current, { rotate: 45, scale: 1.1 }, { type: "spring", stiffness: 400, damping: 20 });
     }, []);
 
     const handleMouseLeave = useCallback(() => {
         if (!cardRef.current || !imgRef.current || !arrowRef.current) return;
         animate(cardRef.current, { y: 0 }, { type: "spring", stiffness: 300, damping: 20 });
-        animate(imgRef.current, { scale: 1.04, x: 0, y: 0 }, { duration: 0.7 });
+        animate(imgRef.current, { scale: 1.04 }, { duration: 0.5 });
         animate(arrowRef.current, { rotate: 0, scale: 1 }, { type: "spring", stiffness: 400, damping: 20 });
-    }, []);
-
-    const handleMouseMove = useCallback((e: React.MouseEvent) => {
-        if (!cardRef.current || !imgRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        animate(imgRef.current, { x: x * 10, y: y * 10 }, { duration: 0.35 });
     }, []);
 
     const handleClick = useCallback(() => {
@@ -52,7 +44,6 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
                 onClick={handleClick}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onMouseMove={handleMouseMove}
                 style={{ visibility: hidden ? "hidden" : "visible" }}
                 className="group relative overflow-hidden cursor-pointer isolate will-change-transform
                            w-full bg-[#111111] border border-white/10
@@ -64,6 +55,8 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
                         ref={imgRef}
                         src={founder.images[0]}
                         alt={founder.name}
+                        loading="lazy"
+                        decoding="async"
                         style={{ transform: "scale(1.04)" }}
                         className="absolute inset-0 w-full h-full object-cover grayscale will-change-transform"
                     />
@@ -145,7 +138,6 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onMouseMove={handleMouseMove}
             style={{ visibility: hidden ? "hidden" : "visible" }}
             className="relative overflow-hidden cursor-pointer isolate will-change-transform
                         h-[min(62vw,680px)] min-h-125

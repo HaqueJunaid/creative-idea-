@@ -14,19 +14,31 @@ export default function PageLoader() {
     const widthTransform = useTransform(progress, (v) => `${v}%`);
 
     useEffect(() => {
-        // Smoothly animate the progress motion value from 0 to 100
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReducedMotion) {
+            setIsFinished(true);
+            setIsRemoved(true);
+            return;
+        }
+
+        let lastVal = -1;
+        // Smoothly animate the progress motion value
         const controls = animate(progress, 100, {
-            duration: 3.5,
-            ease: [0.42, 0, 0.58, 1], // Smooth cubic ease-in-out
+            duration: 1.2,
+            ease: [0.22, 1, 0.36, 1],
             onUpdate: (latest) => {
-                setDisplayProgress(Math.round(latest));
+                const rounded = Math.round(latest);
+                if (rounded !== lastVal && rounded % 3 === 0) {
+                    lastVal = rounded;
+                    setDisplayProgress(rounded);
+                }
             },
             onComplete: () => {
-                // Initiate fade out of the inner loader contents first
+                setDisplayProgress(100);
                 setIsFading(true);
                 setTimeout(() => {
                     setIsFinished(true);
-                }, 500); // Slide up after fade-out completes
+                }, 300);
             }
         });
 

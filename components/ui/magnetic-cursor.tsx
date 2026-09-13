@@ -284,15 +284,12 @@ export const MagneticCursor: FC<MagneticCursorProps> = ({
     left: 0,
     zIndex: 9999,
     pointerEvents: 'none',
-    willChange: 'transform, width, height, border-radius',
+    willChange: 'transform',
     backgroundColor: cursorColor,
     mixBlendMode: blendMode as React.CSSProperties['mixBlendMode'],
     width: cursorSize,
     height: cursorSize,
     borderRadius: shape === 'circle' ? '50%' : shape === 'square' ? '0' : '8px',
-    // KEY FIX: Contrast Boost using backdrop-filter
-    backdropFilter: contrastBoost !== 1 ? `contrast(${contrastBoost})` : 'none',
-    WebkitBackdropFilter: contrastBoost !== 1 ? `contrast(${contrastBoost})` : 'none',
   };
 
   return (

@@ -51,8 +51,6 @@ export default function SelectedWork() {
 
                         <Link
                             href="/works"
-                            data-magnetic
-                            data-cursor-text="ALL WORKS"
                             className="group inline-flex items-center gap-3 font-label font-bold text-xs md:text-sm tracking-[0.16em] uppercase text-brand-primary hover:text-brand-tertiary transition-all duration-300 pb-1 self-start md:self-end"
                         >
                             <span className="relative pb-0.5">

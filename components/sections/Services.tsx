@@ -17,7 +17,7 @@ export default function Services() {
     const imageY = useSpring(mouseY, springConfig);
 
     const handleMouseMove = (e: React.MouseEvent) => {
-        if (!containerRef.current) return;
+        if (!containerRef.current || hoveredIndex === null) return;
         const rect = containerRef.current.getBoundingClientRect();
         mouseX.set(e.clientX - rect.left - 150);
         mouseY.set(e.clientY - rect.top - 180);
@@ -29,7 +29,7 @@ export default function Services() {
             id="services"
             onMouseMove={handleMouseMove}
             onMouseLeave={() => setHoveredIndex(null)}
-            className="relative w-full py-24 px-6 lg:px-16 bg-brand-tertiary text-brand-secondary overflow-hidden cursor-none"
+            className="relative w-full py-24 px-6 lg:px-16 bg-brand-tertiary text-brand-secondary overflow-hidden"
         >
             <div className="w-full mx-auto flex flex-col relative z-10">
                 <ScrollReveal duration={0.8}>
@@ -85,10 +85,12 @@ export default function Services() {
                         key={service.id}
                         src={service.image}
                         alt={service.title}
+                        loading="lazy"
+                        decoding="async"
                         animate={{
                             opacity: hoveredIndex === index ? 1 : 0,
                         }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.15 }}
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                 ))}

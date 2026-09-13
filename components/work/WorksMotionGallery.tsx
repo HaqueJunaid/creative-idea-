@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useMemo } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "motion/react";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue } from "motion/react";
 import { allProjects, type Project } from "@/constants/index";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { ArrowUpRight, X, Sparkles, Layers, SlidersHorizontal } from "lucide-react";
@@ -14,8 +14,10 @@ export default function WorksMotionGallery() {
     const [viewMode, setViewMode] = useState<ViewMode>("showcase");
     const [activeProjectModal, setActiveProjectModal] = useState<Project | null>(null);
     const [hoveredArchiveProject, setHoveredArchiveProject] = useState<Project | null>(null);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [isMobile, setIsMobile] = useState(false);
+
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -53,15 +55,15 @@ export default function WorksMotionGallery() {
     const springCol1Y = useSpring(col1Y, { stiffness: 80, damping: 25, mass: 0.5 });
     const springCol2Y = useSpring(col2Y, { stiffness: 80, damping: 25, mass: 0.5 });
 
-    // Handle floating archive image cursor follow
-    const handleMouseMove = (e: React.MouseEvent) => {
-        setMousePos({ x: e.clientX, y: e.clientY });
+    const handlePointerMove = (e: React.PointerEvent) => {
+        mouseX.set(e.clientX + 24);
+        mouseY.set(e.clientY - 120);
     };
 
     const categories: FilterTab[] = ["ALL", "BRANDING", "DIGITAL", "CAMPAIGN", "3D & HARDWARE"];
 
     return (
-        <div ref={containerRef} className="relative w-full text-brand-primary" onMouseMove={handleMouseMove}>
+        <div ref={containerRef} className="relative w-full text-brand-primary" onPointerMove={handlePointerMove}>
             {/* ── Filter & Mode Switcher Controls ── */}
             <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-6 pb-12 border-b border-brand-primary/10">
                 {/* Category Pills */}
@@ -220,20 +222,25 @@ export default function WorksMotionGallery() {
                     <AnimatePresence>
                         {hoveredArchiveProject && !isMobile && (
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.85 }}
                                 animate={{
                                     opacity: 1,
                                     scale: 1,
-                                    x: mousePos.x + 24,
-                                    y: mousePos.y - 120,
                                 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
+                                exit={{ opacity: 0, scale: 0.85 }}
+                                style={{
+                                    x: mouseX,
+                                    y: mouseY,
+                                    willChange: "transform",
+                                }}
                                 transition={{ type: "spring", stiffness: 350, damping: 25 }}
                                 className="fixed top-0 left-0 pointer-events-none z-50 w-72 h-44 rounded-lg overflow-hidden border border-brand-primary/20 shadow-2xl bg-brand-primary hidden lg:block"
                             >
                                 <img
                                     src={hoveredArchiveProject.image}
                                     alt={hoveredArchiveProject.title}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
@@ -254,14 +261,14 @@ export default function WorksMotionGallery() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 md:p-10 overflow-y-auto"
+                        className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 md:p-10 overflow-y-auto"
                         onClick={() => setActiveProjectModal(null)}
                     >
                         <motion.div
-                            initial={{ scale: 0.92, y: 30, opacity: 0 }}
+                            initial={{ scale: 0.95, y: 20, opacity: 0 }}
                             animate={{ scale: 1, y: 0, opacity: 1 }}
-                            exit={{ scale: 0.92, y: 30, opacity: 0 }}
-                            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+                            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                             onClick={(e) => e.stopPropagation()}
                             className="relative w-full max-w-4xl bg-brand-secondary border border-brand-primary/15 shadow-2xl overflow-hidden flex flex-col my-auto max-h-[90vh]"
                         >
@@ -291,9 +298,11 @@ export default function WorksMotionGallery() {
                                     <img
                                         src={activeProjectModal.image}
                                         alt={activeProjectModal.title}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute top-4 right-4 bg-brand-primary/80 backdrop-blur-md px-3.5 py-1.5 rounded text-white font-mono text-[10px] font-bold tracking-wider">
+                                    <div className="absolute top-4 right-4 bg-brand-primary/80 px-3.5 py-1.5 rounded text-white font-mono text-[10px] font-bold tracking-wider">
                                         {activeProjectModal.metrics}
                                     </div>
                                 </div>
@@ -371,7 +380,7 @@ function WorksMotionCard({ project, isMobile, onOpen }: WorksMotionCardProps) {
     const springImgY = useSpring(imgY, { stiffness: 90, damping: 28, mass: 0.4 });
 
     return (
-        <ScrollReveal duration={0.9} y={45}>
+        <ScrollReveal duration={0.8} y={35}>
             <div
                 ref={cardRef}
                 onClick={onOpen}
@@ -381,7 +390,7 @@ function WorksMotionCard({ project, isMobile, onOpen }: WorksMotionCardProps) {
                 {/* Visual Image Container without borders */}
                 <div className={`w-full ${project.aspectClass} overflow-hidden bg-zinc-900 relative shadow-sm`}>
                     {/* Technical HUD Top Bar */}
-                    <div className="w-full h-8 flex items-center justify-between px-4 bg-brand-secondary/70 backdrop-blur-md z-10 absolute top-0 left-0">
+                    <div className="w-full h-8 flex items-center justify-between px-4 bg-brand-secondary/85 z-10 absolute top-0 left-0">
                         <span className="font-mono text-[9px] text-brand-neutral font-bold tracking-widest">
                             {`${project.title.toUpperCase()} // ${project.year}`}
                         </span>
@@ -394,7 +403,7 @@ function WorksMotionCard({ project, isMobile, onOpen }: WorksMotionCardProps) {
                     </div>
 
                     {/* Metric Tag Badge */}
-                    <div className="absolute bottom-3 left-3 z-10 bg-brand-primary/90 backdrop-blur-md px-3 py-1 rounded">
+                    <div className="absolute bottom-3 left-3 z-10 bg-brand-primary/90 px-3 py-1 rounded">
                         <span className="font-mono text-[9px] text-white tracking-wider uppercase font-bold flex items-center gap-1.5">
                             <Sparkles className="size-2.5 text-brand-tertiary" />
                             {project.metrics}
@@ -405,10 +414,12 @@ function WorksMotionCard({ project, isMobile, onOpen }: WorksMotionCardProps) {
                     <motion.img
                         src={project.image}
                         alt={project.title}
-                        style={isMobile ? {} : { y: springImgY }}
-                        whileHover={{ scale: 1.06 }}
+                        loading="lazy"
+                        decoding="async"
+                        style={isMobile ? {} : { y: springImgY, willChange: "transform" }}
+                        whileHover={{ scale: 1.05 }}
                         transition={{
-                            scale: { duration: 0.75, ease: [0.16, 1, 0.3, 1] }
+                            scale: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                         }}
                         className={isMobile ? "w-full h-full object-cover pt-8" : "absolute top-[-10%] left-0 w-full h-[120%] object-cover pt-8"}
                     />

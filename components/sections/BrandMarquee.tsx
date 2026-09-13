@@ -22,6 +22,8 @@ function BrandCard({ brand }: BrandCardProps) {
                     <img
                         src={brand.logo}
                         alt={brand.name}
+                        loading="lazy"
+                        decoding="async"
                         className="h-full w-auto max-w-[140px] md:max-w-[160px] object-contain opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 text-brand-primary"
                     />
                 </div>

@@ -120,19 +120,28 @@ const Navbar = () => {
     }, [isOpen]);
 
     useEffect(() => {
+        let ticking = false;
+
         const onScroll = () => {
-            const currentScrollY = window.scrollY;
-            setScrolled(currentScrollY > 24);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScrollY = window.scrollY;
+                    const isScrolledNow = currentScrollY > 24;
+                    setScrolled(isScrolledNow);
 
-            if (currentScrollY <= 50) {
-                setIsVisible(true);
-            } else if (currentScrollY > lastScrollY.current) {
-                setIsVisible(false);
-            } else {
-                setIsVisible(true);
+                    if (currentScrollY <= 50) {
+                        setIsVisible(true);
+                    } else if (currentScrollY > lastScrollY.current + 5) {
+                        setIsVisible(false);
+                    } else if (currentScrollY < lastScrollY.current - 5) {
+                        setIsVisible(true);
+                    }
+
+                    lastScrollY.current = currentScrollY;
+                    ticking = false;
+                });
+                ticking = true;
             }
-
-            lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener("scroll", onScroll, { passive: true });
@@ -142,7 +151,7 @@ const Navbar = () => {
     const navBg = isOpen
         ? "bg-brand-primary"
         : scrolled
-            ? "bg-brand-secondary/90 backdrop-blur-md border-b border-brand-primary/8"
+            ? "bg-brand-secondary/95 border-b border-brand-primary/8"
             : "bg-brand-secondary border-b border-brand-primary/8";
 
     return (

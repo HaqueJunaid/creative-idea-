@@ -31,10 +31,12 @@ export default function ProjectCard({ project, isMobile }: { project: Project; i
                 <motion.img
                     src={project.image}
                     alt={project.title}
-                    style={isMobile ? {} : { y: springY }}
+                    loading="lazy"
+                    decoding="async"
+                    style={isMobile ? {} : { y: springY, willChange: "transform" }}
                     whileHover={{ scale: 1.05 }}
                     transition={{
-                        scale: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+                        scale: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
                     }}
                     className={isMobile ? "w-full h-full object-cover pt-8" : "absolute top-[-12%] left-0 w-full h-[124%] object-cover pt-8"}
                 />

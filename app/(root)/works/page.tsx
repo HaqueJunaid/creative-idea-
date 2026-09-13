@@ -17,7 +17,6 @@ export default function WorksPage() {
                 <ScrollReveal duration={0.6}>
                     <Link
                         href="/"
-                        data-magnetic
                         className="inline-flex items-center gap-2 font-mono text-xs font-bold tracking-widest text-brand-neutral hover:text-brand-tertiary uppercase transition-colors duration-200"
                     >
                         <ArrowLeft className="size-3.5" />
