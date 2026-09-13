@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+  <defs>
+    <radialGradient id="solsticeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0A96D" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0E0C0A" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#0E0C0A"/>
+  <rect width="100%" height="100%" fill="url(#solsticeGlow)"/>
+  
+  <!-- Waveform curves -->
+  <g stroke="#E0A96D" stroke-width="1.5" fill="none" opacity="0.4">
+    <path d="M 100 375 Q 350 200 600 375 T 1100 375"/>
+    <path d="M 100 375 Q 350 550 600 375 T 1100 375" opacity="0.2"/>
+    <path d="M 100 375 Q 350 280 600 375 T 1100 375" opacity="0.6"/>
+  </g>
+  
+  <text x="60" y="60" font-family="'Space Grotesk', monospace" font-size="13px" font-weight="700" fill="#E0A96D" letter-spacing="0.3em">SOLSTICE // PROJECT 10</text>
+  <text x="1140" y="60" font-family="'Space Grotesk', monospace" font-size="13px" font-weight="700" fill="#A8A29E" text-anchor="end" letter-spacing="0.2em">SPATIAL ACOUSTIC LAB</text>
+  
+  <text x="50%" y="42%" font-family="'Space Grotesk', sans-serif" font-size="18px" font-weight="700" fill="#D6D3D1" text-anchor="middle" dominant-baseline="central" letter-spacing="0.3em">GENERATIVE SOUND DESIGN</text>
+  <text x="50%" y="50%" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="64px" font-weight="900" fill="#FBF7F4" text-anchor="middle" dominant-baseline="central" letter-spacing="0.08em">SOLSTICE SOUND</text>
+  <text x="50%" y="58%" font-family="'Space Grotesk', sans-serif" font-size="20px" font-weight="600" fill="#E0A96D" text-anchor="middle" dominant-baseline="central" letter-spacing="0.2em">INTERACTIVE WEB / AMBIENT ARCHITECTURE</text>
+  
+  <text x="60" y="700" font-family="'Space Grotesk', monospace" font-size="12px" fill="#78716C" letter-spacing="0.25em">FREQUENCY RESPONSE 20HZ - 48KHZ</text>
+  <text x="1140" y="700" font-family="'Space Grotesk', monospace" font-size="12px" fill="#E0A96D" text-anchor="end" letter-spacing="0.25em">FWA OF THE MONTH</text>
+</svg>

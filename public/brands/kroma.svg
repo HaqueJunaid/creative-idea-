@@ -1,0 +1,5 @@
+<svg viewBox="0 0 190 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="20,6 34,18 34,34 20,42 6,34 6,18" stroke="currentColor" stroke-width="2.5" fill="none"/>
+  <polygon points="20,13 29,20 29,30 20,35 11,30 11,20" fill="currentColor" opacity="0.4"/>
+  <text x="46" y="30" font-family="Space Grotesk, Inter, sans-serif" font-size="18" font-weight="800" letter-spacing="4" fill="currentColor">KROMA</text>
+</svg>

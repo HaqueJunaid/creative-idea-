@@ -1,0 +1,6 @@
+<svg viewBox="0 0 190 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6 34C16 34 26 24 34 10C24 16 14 26 6 34Z" fill="currentColor"/>
+  <path d="M14 36C22 36 30 28 36 18" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <text x="46" y="30" font-family="Space Grotesk, Inter, sans-serif" font-size="18" font-weight="800" letter-spacing="5" fill="currentColor">VELA</text>
+  <text x="116" y="30" font-family="Space Grotesk, Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="currentColor" opacity="0.5">STUDIO</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="somaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141110"/>
+      <stop offset="50%" stop-color="#1B1310"/>
+      <stop offset="100%" stop-color="#0A0909"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#somaGrad)"/>
+  
+  <circle cx="600" cy="750" r="300" fill="none" stroke="#FF5722" stroke-width="2" opacity="0.3"/>
+  <circle cx="600" cy="750" r="220" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="8 8" opacity="0.15"/>
+  <circle cx="600" cy="750" r="140" fill="none" stroke="#FF5722" stroke-width="1.5"/>
+  
+  <text x="80" y="100" font-family="'Space Grotesk', monospace" font-size="14px" font-weight="700" fill="#FF5722" letter-spacing="0.3em">SOMA // HARDWARE 08</text>
+  <text x="1120" y="100" font-family="'Space Grotesk', monospace" font-size="14px" font-weight="700" fill="#78716C" text-anchor="end" letter-spacing="0.2em">BIOMIMETIC KINEMATICS</text>
+  
+  <text x="50%" y="44%" font-family="'Space Grotesk', sans-serif" font-size="20px" font-weight="600" fill="#A8A29E" text-anchor="middle" dominant-baseline="central" letter-spacing="0.3em">INDUSTRIAL ROBOTICS FUTURE</text>
+  <text x="50%" y="50%" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="70px" font-weight="900" fill="#FAFAF9" text-anchor="middle" dominant-baseline="central" letter-spacing="0.08em">SOMA</text>
+  <text x="50%" y="56%" font-family="'Space Grotesk', sans-serif" font-size="22px" font-weight="600" fill="#FF5722" text-anchor="middle" dominant-baseline="central" letter-spacing="0.18em">CREATIVE DIRECTION / 3D CGI MOTION</text>
+  
+  <text x="80" y="1420" font-family="'Space Grotesk', monospace" font-size="13px" fill="#78716C" letter-spacing="0.2em">TORQUE RATIO 450NM // 6-AXIS</text>
+  <text x="1120" y="1420" font-family="'Space Grotesk', monospace" font-size="13px" fill="#FF5722" text-anchor="end" letter-spacing="0.2em">12M+ VIRAL REACH</text>
+</svg>

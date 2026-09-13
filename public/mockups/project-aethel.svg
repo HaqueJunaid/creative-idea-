@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <radialGradient id="aethelGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#AC002D" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0F0F0F" stop-opacity="1"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#222226" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#0D0D10"/>
+  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.6"/>
+  <circle cx="600" cy="450" r="320" fill="url(#aethelGlow)"/>
+  <circle cx="600" cy="450" r="260" fill="none" stroke="#AC002D" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.6"/>
+  <circle cx="600" cy="450" r="180" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.2"/>
+  <circle cx="600" cy="450" r="80" fill="none" stroke="#AC002D" stroke-width="2"/>
+  <line x1="600" y1="190" x2="600" y2="710" stroke="#AC002D" stroke-width="1" opacity="0.4"/>
+  <line x1="340" y1="450" x2="860" y2="450" stroke="#AC002D" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Technical Markings -->
+  <text x="80" y="90" font-family="'Space Grotesk', 'Inter', monospace" font-size="14px" font-weight="700" fill="#AC002D" letter-spacing="0.3em">AETHEL // HOROLOGY 05</text>
+  <text x="1120" y="90" font-family="'Space Grotesk', 'Inter', monospace" font-size="14px" font-weight="700" fill="#71717A" text-anchor="end" letter-spacing="0.2em">GENEVA ATELIER // 28,800 VPH</text>
+  
+  <text x="50%" y="42%" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20px" font-weight="700" fill="#A1A1AA" text-anchor="middle" dominant-baseline="central" letter-spacing="0.3em">SWISS KINETIC FLAGSHIP</text>
+  <text x="50%" y="50%" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="68px" font-weight="900" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central" letter-spacing="0.06em">AETHEL</text>
+  <text x="50%" y="58%" font-family="'Space Grotesk', 'Inter', sans-serif" font-size="22px" font-weight="600" fill="#AC002D" text-anchor="middle" dominant-baseline="central" letter-spacing="0.18em">3D INTERACTIVE / WEBGL SHOWROOM</text>
+  
+  <text x="80" y="830" font-family="'Space Grotesk', monospace" font-size="13px" fill="#52525B" letter-spacing="0.2em">LAT 46.2044° N // LON 6.1432° E</text>
+  <text x="1120" y="830" font-family="'Space Grotesk', monospace" font-size="13px" fill="#52525B" text-anchor="end" letter-spacing="0.2em">PRE-ORDER VALUE: $3.4M</text>
+</svg>

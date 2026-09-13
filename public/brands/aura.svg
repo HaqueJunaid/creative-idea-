@@ -1,0 +1,7 @@
+<svg viewBox="0 0 190 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="24" r="10" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2.5" opacity="0.7" stroke-dasharray="2 2"/>
+  <circle cx="19" cy="24" r="3.5" fill="currentColor"/>
+  <text x="46" y="30" font-family="Space Grotesk, Inter, sans-serif" font-size="18" font-weight="800" letter-spacing="4" fill="currentColor">AURA</text>
+  <text x="122" y="30" font-family="Space Grotesk, Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="1.5" fill="currentColor" opacity="0.5">SOUND</text>
+</svg>
