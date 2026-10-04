@@ -12,10 +12,10 @@ function BrandCard({ brand }: BrandCardProps) {
     return (
         <div
             data-cursor-text="CLIENT"
-            className="group relative flex items-center justify-between gap-6 px-8 py-5 rounded-none border border-brand-primary/10 bg-brand-secondary/60 hover:bg-brand-primary/[0.04] hover:border-brand-tertiary/40 transition-all duration-300 min-w-[260px] md:min-w-[300px] select-none cursor-pointer"
+            className="group relative flex items-center justify-between gap-6 px-8 py-5 rounded-none border border-brand-primary/10 bg-brand-secondary/60 hover:bg-brand-primary/4 hover:border-brand-tertiary/40 transition-all duration-300 min-w-65 md:min-w-75 select-none cursor-pointer"
         >
             {/* Top accent tick on hover */}
-            <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-tertiary group-hover:w-full transition-all duration-500 ease-out" />
+            <div className="absolute top-0 left-0 w-0 h-0.5 bg-brand-tertiary group-hover:w-full transition-all duration-500 ease-out" />
 
             <div className="flex flex-col gap-1.5 flex-1 min-w-0">
                 <div className="h-7 md:h-8 flex items-center">
@@ -24,7 +24,7 @@ function BrandCard({ brand }: BrandCardProps) {
                         alt={brand.name}
                         loading="lazy"
                         decoding="async"
-                        className="h-full w-auto max-w-[140px] md:max-w-[160px] object-contain opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 text-brand-primary"
+                        className="h-full w-auto max-w-35 md:max-w-40 object-contain opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 text-brand-primary"
                     />
                 </div>
                 <div className="flex items-center gap-2">

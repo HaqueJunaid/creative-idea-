@@ -3,12 +3,12 @@ export interface EmailData {
   email: string;
   phone?: string;
   message: string;
-  services: string[];
+  services?: string[];
 }
 
 export function getPremiumEmailHtml(data: EmailData): string {
   const { name, email, phone, message, services } = data;
-  const serviceTags = services
+  const serviceTags = (services || [])
     .map(
       (s) =>
         `<span style="display: inline-block; background-color: rgba(51, 102, 255, 0.15); border: 1px solid rgba(51, 102, 255, 0.3); color: #8ab4f8; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 12px; margin-right: 6px; margin-bottom: 6px; font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">${s}</span>`

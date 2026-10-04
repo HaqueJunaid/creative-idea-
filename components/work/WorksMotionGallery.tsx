@@ -243,7 +243,7 @@ export default function WorksMotionGallery() {
                                     decoding="async"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
+                                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
                                     <span className="font-mono text-[10px] text-white tracking-widest uppercase font-bold">
                                         {hoveredArchiveProject.title} {" // "} {hoveredArchiveProject.metrics}
                                     </span>
@@ -294,7 +294,7 @@ export default function WorksMotionGallery() {
                             {/* Modal Scrollable Body */}
                             <div className="p-6 md:p-10 overflow-y-auto flex flex-col gap-8">
                                 {/* Visual Preview */}
-                                <div className="w-full aspect-[16/9] overflow-hidden bg-brand-primary relative">
+                                <div className="w-full aspect-video overflow-hidden bg-brand-primary relative">
                                     <img
                                         src={activeProjectModal.image}
                                         alt={activeProjectModal.title}

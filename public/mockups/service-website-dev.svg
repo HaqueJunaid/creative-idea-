@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-glow-3" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#3366FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0E0E10" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg-glow-3)"/>
+  <rect x="40" y="40" width="820" height="1020" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+  <text x="50%" y="42%" font-family="system-ui, -apple-system, 'Space Grotesk', 'Inter', sans-serif" font-size="16px" font-weight="700" fill="#A1A1AA" text-anchor="middle" dominant-baseline="central" letter-spacing="0.25em">CAPABILITY</text>
+  <text x="50%" y="50%" font-family="system-ui, -apple-system, 'Space Grotesk', 'Inter', sans-serif" font-size="34px" font-weight="900" fill="#F4F4F5" text-anchor="middle" dominant-baseline="central" letter-spacing="0.06em">WEBSITE DESIGN &amp; DEVELOPMENT</text>
+  <text x="50%" y="58%" font-family="system-ui, -apple-system, 'Space Grotesk', 'Inter', sans-serif" font-size="18px" font-weight="600" fill="#3366FF" text-anchor="middle" dominant-baseline="central" letter-spacing="0.18em">03 // SERVICES</text>
+</svg>

@@ -5,6 +5,7 @@ import PageLoader from "@/components/common/PageLoader";
 import Footer from "@/components/common/Footer";
 import { ContactProvider } from "@/context/ContactContext";
 import ContactModal from "@/components/common/ContactModal";
+import JoinModal from "@/components/common/JoinModal";
 import SmoothScroll from "@/components/common/SmoothScroll";
 
 const RootLayout = ({ children }: {children: React.ReactNode}) => {
@@ -21,6 +22,7 @@ const RootLayout = ({ children }: {children: React.ReactNode}) => {
                         </div>
                         <Footer />
                         <ContactModal />
+                        <JoinModal />
                     </div>
                 </MagneticCursor>
             </SmoothScroll>

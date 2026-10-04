@@ -48,7 +48,7 @@ export default function Process() {
                 </ScrollReveal>
 
                 <div className="lg:col-span-7 relative pl-0">
-                    <div className="absolute left-6 top-6 bottom-6 w-[2px] -translate-x-1/2 pointer-events-none">
+                    <div className="absolute left-6 top-6 bottom-6 w-0.5 -translate-x-1/2 pointer-events-none">
                         <svg className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line
                                 x1="1"

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bg-glow-2" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#FFE739" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0E0E10" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg-glow-2)"/>
+  <rect x="40" y="40" width="820" height="1020" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+  <rect x="350" y="260" width="200" height="200" fill="none" stroke="#FFE739" stroke-opacity="0.25" stroke-dasharray="6 6"/>
+  <text x="50%" y="42%" font-family="system-ui, -apple-system, 'Space Grotesk', 'Inter', sans-serif" font-size="16px" font-weight="700" fill="#A1A1AA" text-anchor="middle" dominant-baseline="central" letter-spacing="0.25em">CAPABILITY</text>
+  <text x="50%" y="50%" font-family="system-ui, -apple-system, 'Space Grotesk', 'Inter', sans-serif" font-size="40px" font-weight="900" fill="#F4F4F5" text-anchor="middle" dominant-baseline="central" letter-spacing="0.06em">BRAND STRATEGY &amp; DESIGN</text>
+  <text x="50%" y="58%" font-family="system-ui, -apple-system, 'Space Grotesk', 'Inter', sans-serif" font-size="18px" font-weight="600" fill="#FFE739" text-anchor="middle" dominant-baseline="central" letter-spacing="0.18em">02 // SERVICES</text>
+</svg>

@@ -56,7 +56,7 @@ export default function DeliveredLabel({ progress }: DeliveredLabelProps) {
             <div className="flex flex-col items-center relative z-10 w-12 shrink-0">
                 <motion.div
                     style={{ borderColor: nodeBorder }}
-                    className="w-12 h-12 rounded-full border bg-[#F9F8F6] flex items-center justify-center relative"
+                    className="w-12 h-12 rounded-full border bg-brand-secondary flex items-center justify-center relative"
                 >
                     <motion.div
                         style={{ backgroundColor: nodeBg }}

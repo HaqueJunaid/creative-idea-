@@ -49,11 +49,11 @@ export default function ProcessStepCard({ step, index, total }: ProcessStepCardP
     );
 
     return (
-        <div ref={ref} className="flex gap-8 md:gap-16 relative pb-24 last:pb-8">
+        <div ref={ref} className="flex gap-8 md:gap-16 relative pb-24">
             <div className="flex flex-col items-center relative z-10 w-12 shrink-0">
                 <motion.div
                     style={{ borderColor: nodeBorder }}
-                    className="w-12 h-12 rounded-full border bg-[#F9F8F6] flex items-center justify-center relative"
+                    className="w-12 h-12 rounded-full border bg-brand-secondary flex items-center justify-center relative"
                 >
                     <motion.div
                         style={{ backgroundColor: nodeBg }}
@@ -79,7 +79,7 @@ export default function ProcessStepCard({ step, index, total }: ProcessStepCardP
                     {step.outputs.map((out) => (
                         <span
                             key={out}
-                            className="font-label text-[10px] font-bold text-brand-primary/75 tracking-wider uppercase border border-brand-primary/10 px-3.5 py-1.5 rounded-full bg-brand-primary/[0.02]"
+                            className="font-label text-[10px] font-bold text-brand-primary/75 tracking-wider uppercase border border-brand-primary/10 px-3.5 py-1.5 rounded-full bg-brand-primary/2"
                         >
                             {out}
                         </span>

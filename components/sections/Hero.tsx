@@ -35,7 +35,7 @@ const Hero = () => {
                 </ScrollReveal>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mt-16 lg:mt-24 pb-24 w-full items-stretch">
-                    <ScrollReveal duration={0.9} className="md:col-span-7 h-[55vh] min-h-[380px] md:h-[80vh] lg:h-[90vh] min-h-0">
+                    <ScrollReveal duration={0.9} className="md:col-span-7 h-[55vh] min-h-95 md:h-[80vh] lg:h-[90vh]">
                         <div data-cursor-text="VIEW" className="w-full h-full bg-zinc-900 overflow-hidden relative cursor-pointer group">
                             <img 
                                 src="/mockups/hero-primary.svg" 
@@ -56,7 +56,7 @@ const Hero = () => {
                         </div>
                     </ScrollReveal>
                     
-                    <ScrollReveal delay={0.15} duration={0.9} className="md:col-span-5 h-[55vh] min-h-[380px] md:h-[80vh] lg:h-[90vh] flex flex-col gap-6">
+                    <ScrollReveal delay={0.15} duration={0.9} className="md:col-span-5 h-[55vh] min-h-95 md:h-[80vh] lg:h-[90vh] flex flex-col gap-6">
                         <div data-cursor-text="EXPLORE" className="flex-1 min-h-0 w-full bg-zinc-900 overflow-hidden relative cursor-pointer group">
                             <img 
                                 src="/mockups/hero-secondary.svg" 

@@ -47,10 +47,10 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
                 style={{ visibility: hidden ? "hidden" : "visible" }}
                 className="group relative overflow-hidden cursor-pointer isolate will-change-transform
                            w-full bg-[#111111] border border-white/10
-                           grid grid-cols-1 md:grid-cols-12 min-h-[620px] sm:min-h-[700px] lg:min-h-[780px] xl:min-h-[840px] shadow-2xl"
+                           grid grid-cols-1 md:grid-cols-12 min-h-155 sm:min-h-175 lg:min-h-195 xl:min-h-210 shadow-2xl"
             >
                 {/* Left: Portrait image with interactive hover */}
-                <div className="md:col-span-5 relative overflow-hidden min-h-[440px] md:min-h-full bg-[#161616]">
+                <div className="md:col-span-5 relative overflow-hidden min-h-110 md:min-h-full bg-[#161616]">
                     <img
                         ref={imgRef}
                         src={founder.images[0]}
@@ -60,7 +60,7 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
                         style={{ transform: "scale(1.04)" }}
                         className="absolute inset-0 w-full h-full object-cover grayscale will-change-transform"
                     />
-                    <div className="absolute inset-0 z-1 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/40 pointer-events-none" />
+                    <div className="absolute inset-0 z-1 bg-linear-to-t from-black/80 via-black/20 to-transparent md:bg-linear-to-r md:from-transparent md:to-black/40 pointer-events-none" />
 
                     {/* Tag on top left */}
                     <span className="absolute top-8 left-8 z-3 text-white/70 text-xs tracking-[.25em] font-label uppercase">

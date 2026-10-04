@@ -6,12 +6,9 @@ import { motion, AnimatePresence } from "motion/react";
 import { useContact } from "@/context/ContactContext";
 import { ArrowUpIcon } from "lucide-react";
 
-const services = ["Paid Ads", "Branding", "Web Dev", "Event Branding", "Flex Printing", "Wedding Designs"];
-
 export default function ContactModal() {
     const { isContactOpen, closeContact } = useContact();
     const [mounted, setMounted] = useState(false);
-    const [selectedServices, setSelectedServices] = useState<string[]>(["Paid Ads"]);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     // Form field states
@@ -21,15 +18,6 @@ export default function ContactModal() {
     const [message, setMessage] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-    const toggleService = (service: string) => {
-        if (isSubmitting) return;
-        setSelectedServices(prev =>
-            prev.includes(service)
-                ? prev.filter(s => s !== service)
-                : [...prev, service]
-        );
-    };
 
     useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -66,7 +54,6 @@ export default function ContactModal() {
                     email,
                     phone,
                     message,
-                    services: selectedServices,
                 }),
             });
 
@@ -81,7 +68,6 @@ export default function ContactModal() {
             setEmail("");
             setPhone("");
             setMessage("");
-            setSelectedServices(["Paid Ads"]);
 
             setTimeout(() => {
                 closeContact();
@@ -114,13 +100,13 @@ export default function ContactModal() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 40 }}
                         transition={{ type: "spring", stiffness: 300, damping: 26 }}
-                        className="relative bg-[#0E0E0E] border border-brand-secondary/5 rounded-2xl w-full max-w-4xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.8)] z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[520px]"
+                        className="relative bg-[#0E0E0E] border border-brand-secondary/5 w-full max-w-6xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.8)] z-10 grid grid-cols-1 lg:grid-cols-12 min-h-130"
                     >
 
                         <button
                             onClick={closeContact}
                             aria-label="Close"
-                            className="absolute top-6 right-6 w-9 h-9 rounded-full border border-brand-secondary/10 flex items-center justify-center text-brand-secondary/50 hover:text-brand-secondary hover:border-brand-secondary/20 hover:scale-105 transition-all duration-200 cursor-pointer z-25"
+                            className="absolute top-6 right-6 w-9 h-9 border border-brand-secondary/10 flex items-center justify-center text-brand-secondary/50 hover:text-brand-secondary hover:border-brand-secondary/20 hover:scale-105 transition-all duration-200 cursor-pointer z-25"
                         >
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -204,9 +190,9 @@ export default function ContactModal() {
                                                     value={name}
                                                     onChange={(e) => setName(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary placeholder-brand-secondary/20 focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
-                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary group-focus-within:w-full transition-all duration-300 pointer-events-none" />
+                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
 
                                             <div className="flex flex-col gap-1 relative group">
@@ -217,9 +203,9 @@ export default function ContactModal() {
                                                     value={email}
                                                     onChange={(e) => setEmail(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary placeholder-brand-secondary/20 focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
-                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary group-focus-within:w-full transition-all duration-300 pointer-events-none" />
+                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
 
                                             <div className="flex flex-col gap-1 relative group">
@@ -229,9 +215,9 @@ export default function ContactModal() {
                                                     value={phone}
                                                     onChange={(e) => setPhone(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary placeholder-brand-secondary/20 focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
-                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary group-focus-within:w-full transition-all duration-300 pointer-events-none" />
+                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
 
                                             <div className="flex flex-col gap-1 relative group">
@@ -242,34 +228,13 @@ export default function ContactModal() {
                                                     value={message}
                                                     onChange={(e) => setMessage(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary placeholder-brand-secondary/20 focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans resize-none w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
-                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary group-focus-within:w-full transition-all duration-300 pointer-events-none" />
-                                            </div>
-
-                                            <div className="flex flex-col gap-3.5 mt-2">
-                                                <span className="font-mono text-[9px] text-brand-secondary/35 tracking-widest uppercase font-bold">
-                                                    SERVICES INTERESTED IN
-                                                </span>
-                                                <div className="flex flex-wrap gap-2">
-                                                    {services.map((s) => (
-                                                        <button
-                                                            key={s}
-                                                            type="button"
-                                                            onClick={() => toggleService(s)}
-                                                            className={`py-2.5 px-4 border text-[10px] md:text-xs font-bold tracking-widest uppercase transition-all duration-200 cursor-pointer ${selectedServices.includes(s)
-                                                                    ? "bg-brand-tertiary border-brand-tertiary text-brand-secondary shadow-lg shadow-brand-tertiary/20"
-                                                                    : "bg-brand-secondary/1 border-brand-secondary/5 text-brand-neutral hover:border-brand-secondary/10 hover:text-brand-secondary"
-                                                                }`}
-                                                        >
-                                                            {s}
-                                                        </button>
-                                                    ))}
-                                                </div>
+                                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
 
                                             {errorMsg && (
-                                                <div className="text-red-500 font-sans text-xs mt-2 text-left bg-red-500/10 border border-red-500/20 px-4 py-3 rounded-lg">
+                                                <div className="text-red-500 font-sans text-xs mt-2 text-left bg-red-500/10 border border-red-500/20 px-4 py-3">
                                                     {errorMsg}
                                                 </div>
                                             )}
@@ -277,7 +242,7 @@ export default function ContactModal() {
                                             <button
                                                 type="submit"
                                                 disabled={isSubmitting}
-                                                className="group mt-6 w-full flex items-center justify-center gap-3 font-label font-bold text-xs tracking-[0.15em] uppercase text-brand-primary bg-brand-secondary py-5 hover:bg-brand-tertiary hover:text-brand-secondary transition-all duration-300 shadow-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className="group mt-6 w-full flex items-center justify-center gap-3 font-label font-bold text-xs tracking-[0.15em] uppercase text-brand-primary bg-brand-secondary py-5 hover:bg-brand-tertiary hover:text-brand-secondary transition-all duration-300 shadow-lg cursor-pointer disabled:opacity-50"
                                             >
                                                 {isSubmitting ? "Sending..." : "Send Message"}
                                                 {!isSubmitting && <ArrowUpIcon className="size-6 rotate-90 group-hover:translate-x-2 transition-transform duration-300" />}

@@ -13,6 +13,10 @@ export const navLinks: NavbarProps[] = [
         link: "/#services",
     },
     {
+        label: "OUR STORY",
+        link: "/#story",
+    },
+    {
         label: "PROCESS",
         link: "/#process",
     },
@@ -24,7 +28,7 @@ export const navLinks: NavbarProps[] = [
         label: "CONTACT",
         link: "#contact",
     },
-]
+];
 
 
 export interface Project {
@@ -216,27 +220,75 @@ export interface ServiceItem {
 export const services: ServiceItem[] = [
     {
         id: "01",
-        title: "Social Media Advertising",
-        description: "Data-driven campaigns designed to interrupt the scroll and demand attention.",
-        image: "/mockups/service-social.svg"
+        title: "Social Media Marketing",
+        description: "Strategic social media campaigns that increase reach, engagement and brand visibility.",
+        image: "/mockups/service-social-marketing.svg"
     },
     {
         id: "02",
-        title: "Creative Design",
-        description: "Bold visual identities and editorial art direction that separates you from the noise.",
-        image: "/mockups/service-creative.svg"
+        title: "Brand Strategy & Design",
+        description: "Strong brand identities, creative designs and visual systems that make your brand stand out.",
+        image: "/mockups/service-brand-strategy.svg"
     },
     {
         id: "03",
-        title: "Web Design & Development",
-        description: "High-performance digital experiences built with architectural precision.",
-        image: "/mockups/service-web.svg"
+        title: "Website Design & Development",
+        description: "Responsive, SEO-friendly websites built for better user experience and business growth.",
+        image: "/mockups/service-website-dev.svg"
     },
     {
         id: "04",
-        title: "Event Branding & Wedding Graphics",
-        description: "Customizing every touchpoint of your special occasion — from invites to on-site experiences.",
-        image: "/mockups/service-strategy.svg"
+        title: "SEO & SMO",
+        description: "Improve search rankings, online visibility and organic audience reach.",
+        image: "/mockups/service-seo-smo.svg"
+    },
+    {
+        id: "05",
+        title: "Digital Marketing",
+        description: "Result-driven digital campaigns designed to attract, engage and convert customers.",
+        image: "/mockups/service-digital-marketing.svg"
+    },
+    {
+        id: "06",
+        title: "Printing & Packaging",
+        description: "Creative printing and packaging solutions that bring your brand to life.",
+        image: "/mockups/service-printing-packaging.svg"
+    },
+    {
+        id: "07",
+        title: "Photography & Videography",
+        description: "Professional visuals for products, brands, events and digital marketing.",
+        image: "/mockups/service-photography-videography.svg"
+    },
+    {
+        id: "08",
+        title: "Social Media Management",
+        description: "Complete social media management with content, design, publishing and engagement.",
+        image: "/mockups/service-social-management.svg"
+    },
+    {
+        id: "09",
+        title: "Corporate & Customized Gifting",
+        description: "Branded corporate gifts and customised merchandise for every occasion.",
+        image: "/mockups/service-corporate-gifting.svg"
+    },
+    {
+        id: "10",
+        title: "Event Branding",
+        description: "Complete event branding solutions for impactful and memorable experiences.",
+        image: "/mockups/service-event-branding.svg"
+    },
+    {
+        id: "11",
+        title: "ACP & Acrylic Solutions",
+        description: "Custom ACP structures, acrylic signage and display solutions for businesses and events.",
+        image: "/mockups/service-acp-acrylic.svg"
+    },
+    {
+        id: "12",
+        title: "Videos & Animations",
+        description: "Engaging promotional videos, motion graphics, animations and brand presentations.",
+        image: "/mockups/service-videos-animations.svg"
     }
 ];
 
@@ -252,14 +304,14 @@ export interface Founder {
 export const founders: Founder[] = [
     {
         name: "Adarsh Sharma",
-        role: "Founder",
+        role: "Founder, CEO",
         shortBio: "Turns ideas into thoughtful digital & physical products built to solve brands problems.",
         bio: "Adarsh combines technical expertise with a founder’s mindset to turn ideas into scalable digital & physical design products, building solutions that are purposeful, practical, and made to create lasting impact.",
         stats: [["4+", "Years"], ["25", "Brands"], ["30+", "Projects"]],
         images: [
-            "/mockups/founder-junaid-1.svg",
-            "/mockups/founder-junaid-2.svg",
-            "/mockups/founder-junaid-3.svg",
+            "/assets/First.jpeg",
+            "/assets/Second.png",
+            "/assets/Third.png",
         ],
     }
 ];
@@ -404,4 +456,197 @@ export const brands: Brand[] = [
         logo: "/brands/solaris.svg",
         highlight: "Conversion Funnel",
     },
-];
+];
+
+export interface StoryChapter {
+    id: string;
+    number: string;
+    year: string;
+    tag: string;
+    title: string;
+    headline: string;
+    content: string;
+    iconName: "Sparkles" | "Layers" | "Compass" | "MapPin" | "TrendingUp";
+    highlights: string[];
+}
+
+export const storyChapters: StoryChapter[] = [
+    {
+        id: "genesis",
+        number: "01",
+        year: "2019",
+        tag: "The Genesis",
+        title: "The Vision Takes Root",
+        headline: "Turn ideas into powerful, memorable brands.",
+        content:
+            "Founded in 2019, Creative Idea started with a simple vision — to help businesses turn their ideas into powerful and memorable brands. What began with graphic design and creative communication has grown into a complete branding, marketing and production agency.",
+        iconName: "Sparkles",
+        highlights: [
+            "Started with graphic design & creative communication",
+            "Rooted in Jamshedpur, Jharkhand",
+            "Helping businesses dream bigger and bolder"
+        ],
+    },
+    {
+        id: "evolution",
+        number: "02",
+        year: "2021 — 2023",
+        tag: "Expansion",
+        title: "Multi-Disciplinary Evolution",
+        headline: "Cross-industry capabilities across every medium.",
+        content:
+            "Over the years, we have worked with businesses across different industries, providing professional services in brand strategy, graphic design, social media management, digital marketing, website development, photography, videography, printing, packaging and event branding.",
+        iconName: "Layers",
+        highlights: [
+            "Brand Strategy & Digital Marketing",
+            "Website Design & Social Media Management",
+            "Photography, Printing & Event Branding"
+        ],
+    },
+    {
+        id: "philosophy",
+        number: "03",
+        year: "The Approach",
+        tag: "Core Philosophy",
+        title: "Beyond Good Design",
+        headline: "Strategy, design, and production under one single roof.",
+        content:
+            "We believe that building a successful brand requires more than just good design. It needs a clear strategy, consistent communication and the right creative execution. That's why we bring strategy, design, digital, print and production solutions together under one roof.",
+        iconName: "Compass",
+        highlights: [
+            "Clear Strategy + Consistent Communication",
+            "End-to-End Creative Execution",
+            "Unified in-house production workflow"
+        ],
+    },
+    {
+        id: "footprint",
+        number: "04",
+        year: "Regional Scale",
+        tag: "Community & Impact",
+        title: "From Local Roots to Regional Reach",
+        headline: "Partnering with startups, enterprises, and innovators.",
+        content:
+            "Based in Jamshedpur, we work with startups, local businesses, established companies and growing brands across Jharkhand and beyond. From creating a brand identity to building its digital presence, we help businesses communicate their ideas effectively and create lasting brand experiences.",
+        iconName: "MapPin",
+        highlights: [
+            "Startups & Fast-Growing Brands",
+            "Established Enterprises Across Jharkhand & Beyond",
+            "Lasting, tangible brand experiences"
+        ],
+    },
+    {
+        id: "future",
+        number: "05",
+        year: "Present & Future",
+        tag: "Our Commitment",
+        title: "Building Brands Through Better Ideas",
+        headline: "Continuous learning and relentless creative momentum.",
+        content:
+            "Since 2019, our journey has been driven by creativity, learning and a commitment to delivering meaningful work. As technology and the digital landscape continue to evolve, Creative Idea continues to grow with them — while staying focused on one thing: building brands through better ideas.",
+        iconName: "TrendingUp",
+        highlights: [
+            "Driven by creativity & continuous learning",
+            "Adapting to modern technology & digital shifts",
+            "Focused on delivering meaningful work"
+        ],
+    },
+];
+
+export interface EcosystemPillar {
+    num: string;
+    title: string;
+    desc: string;
+}
+
+export const ecosystemPillars: EcosystemPillar[] = [
+    { num: "01", title: "Strategy", desc: "Market Positioning & Execution Blueprint" },
+    { num: "02", title: "Design", desc: "Visual Systems & Brand Identities" },
+    { num: "03", title: "Digital", desc: "Websites, SMM & Digital Marketing" },
+    { num: "04", title: "Print", desc: "Packaging, Signage & Print Solutions" },
+    { num: "05", title: "Production", desc: "Photography, Videos & Event Branding" },
+];
+
+export interface DifferenceItem {
+    id: string;
+    number: string;
+    title: string;
+    description: string;
+    iconName: "Layers" | "Lightbulb" | "UserCheck" | "Users" | "Zap" | "MessageSquareQuote" | "Handshake";
+}
+
+export const differenceItems: DifferenceItem[] = [
+    {
+        id: "in-house",
+        number: "01",
+        title: "IN-HOUSE EXPERTISE",
+        description: "From strategy and design to digital, print and production, we manage everything under one roof.",
+        iconName: "Layers",
+    },
+    {
+        id: "creative-thinking",
+        number: "02",
+        title: "FRESH CREATIVE THINKING",
+        description: "A creative team bringing fresh ideas, modern design and innovative solutions to every project.",
+        iconName: "Lightbulb",
+    },
+    {
+        id: "founder-led",
+        number: "03",
+        title: "FOUNDER-LED APPROACH",
+        description: "Direct involvement and creative direction to ensure every project stays aligned with your brand vision.",
+        iconName: "UserCheck",
+    },
+    {
+        id: "collaborative",
+        number: "04",
+        title: "COLLABORATIVE WORKFLOW",
+        description: "Designers, marketers, developers and production teams working together for seamless execution.",
+        iconName: "Users",
+    },
+    {
+        id: "efficient-execution",
+        number: "05",
+        title: "FAST & EFFICIENT EXECUTION",
+        description: "Streamlined processes that help us deliver quality creative work within practical timelines.",
+        iconName: "Zap",
+    },
+    {
+        id: "transparent-comm",
+        number: "06",
+        title: "CLEAR & TRANSPARENT COMMUNICATION",
+        description: "Straightforward communication, clear deliverables and a collaborative approach at every stage.",
+        iconName: "MessageSquareQuote",
+    },
+    {
+        id: "long-term",
+        number: "07",
+        title: "LONG-TERM PARTNERSHIPS",
+        description: "We don't just complete projects—we build lasting relationships and grow alongside the brands we work with.",
+        iconName: "Handshake",
+    },
+];
+
+export const availableRoles: string[] = [
+    "Graphic Designer",
+    "Motion / Video Artist",
+    "Web Developer",
+    "Social Media Strategist",
+    "Digital Marketer",
+    "Photographer / Videographer",
+    "Production Specialist",
+    "Content Writer",
+];
+
+export const footerMarqueeText =
+    "HIGH-VELOCITY CREATIVE ✦ SOCIAL ADVERTISING ✦ WEB DEVELOPMENT ✦ BRAND STRATEGY ✦ ART DIRECTION ✦ ";
+
+export const legalLinks = ["Privacy Policy", "Terms of Service", "Support"];
+
+export const socialLinks = [
+    { label: "Instagram", href: "#instagram" },
+    { label: "Twitter / X", href: "#twitter" },
+    { label: "LinkedIn", href: "#linkedin" },
+    { label: "GitHub", href: "#github" },
+];
+

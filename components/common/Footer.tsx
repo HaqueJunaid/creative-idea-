@@ -4,14 +4,13 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { useContact } from "@/context/ContactContext";
 import { ArrowUpIcon, AtSign } from "lucide-react";
+import { footerMarqueeText, legalLinks } from "@/constants";
 
 export default function Footer() {
     const { openContact } = useContact();
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
-
-    const marqueeText = "HIGH-VELOCITY CREATIVE ✦ SOCIAL ADVERTISING ✦ WEB DEVELOPMENT ✦ BRAND STRATEGY ✦ ART DIRECTION ✦ ";
 
     return (
         <footer className="relative md:sticky md:bottom-0 md:z-0 w-full md:h-155 bg-brand-primary text-brand-secondary overflow-hidden flex flex-col justify-between py-12 px-6 lg:px-16">
@@ -26,8 +25,8 @@ export default function Footer() {
                     transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                     className="flex whitespace-nowrap text-xs md:text-sm font-mono font-black tracking-[0.25em] text-white uppercase"
                 >
-                    <span className="pr-4">{marqueeText}</span>
-                    <span className="pr-4">{marqueeText}</span>
+                    <span className="pr-4">{footerMarqueeText}</span>
+                    <span className="pr-4">{footerMarqueeText}</span>
                 </motion.div>
             </div>
 
@@ -56,7 +55,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-wrap gap-2.5 justify-center items-center mt-2 mb-10 md:mb-0">
-                    {["Privacy Policy", "Terms of Service", "Support"].map((item) => (
+                    {legalLinks.map((item) => (
                         <Link
                             key={item}
                             href="#"
