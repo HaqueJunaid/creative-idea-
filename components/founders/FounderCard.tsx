@@ -46,8 +46,7 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
                 onMouseLeave={handleMouseLeave}
                 style={{ visibility: hidden ? "hidden" : "visible" }}
                 className="group relative overflow-hidden cursor-pointer isolate will-change-transform
-                           w-full bg-[#111111] border border-white/10
-                           grid grid-cols-1 md:grid-cols-12 min-h-155 sm:min-h-175 lg:min-h-195 xl:min-h-210 shadow-2xl"
+                           w-full grid grid-cols-1 md:grid-cols-12 min-h-155 sm:min-h-175 lg:min-h-195 xl:min-h-210"
             >
                 {/* Left: Portrait image with interactive hover */}
                 <div className="md:col-span-5 relative overflow-hidden min-h-110 md:min-h-full bg-[#161616]">
@@ -58,7 +57,7 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
                         loading="lazy"
                         decoding="async"
                         style={{ transform: "scale(1.04)" }}
-                        className="absolute inset-0 w-full h-full object-cover grayscale will-change-transform"
+                        className="absolute inset-0 w-full h-full object-cover will-change-transform"
                     />
                     <div className="absolute inset-0 z-1 bg-linear-to-t from-black/80 via-black/20 to-transparent md:bg-linear-to-r md:from-transparent md:to-black/40 pointer-events-none" />
 
@@ -131,60 +130,4 @@ export default function FounderCard({ founder, index, total, onOpen, hidden }: F
             </article>
         );
     }
-
-    return (
-        <article
-            ref={cardRef}
-            onClick={handleClick}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={{ visibility: hidden ? "hidden" : "visible" }}
-            className="relative overflow-hidden cursor-pointer isolate will-change-transform
-                        h-[min(62vw,680px)] min-h-125
-                        max-sm:min-h-120 max-sm:h-140"
-        >
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 z-1 bg-linear-to-b from-black/5 to-black/80 pointer-events-none" />
-
-            {/* Photo */}
-            <img
-                ref={imgRef}
-                src={founder.images[0]}
-                alt={founder.name}
-                style={{ transform: "scale(1.04)" }}
-                className="absolute inset-0 w-full h-full object-cover grayscale will-change-transform"
-            />
-
-            {/* Number */}
-            <span className="absolute top-5.5 left-5.5 z-3 text-white/65 text-[10px] tracking-[.15em] font-label">
-                {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-            </span>
-
-            {/* Arrow button */}
-            <span
-                ref={arrowRef}
-                className="absolute top-5 right-5 z-4 grid w-10.5 h-10.5 place-items-center
-                           border border-white/25 rounded-full text-white text-base
-                           transition-colors duration-300"
-            >
-                <ArrowUpIcon className="size-4 rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-            </span>
-
-            {/* Content */}
-            <div className="absolute left-6.25 right-6.25 bottom-6.25 z-3">
-                <div className="mb-2 text-brand-tertiary text-[10px] tracking-[.14em] uppercase font-label font-bold">
-                    {founder.role}
-                </div>
-                <h2
-                    className="font-serif font-normal leading-[.9] tracking-tighter"
-                    style={{ fontSize: "clamp(38px,4vw,65px)" }}
-                >
-                    {founder.name}
-                </h2>
-                <p className="mt-3 text-white/65 text-xs leading-relaxed max-w-70 font-sans">
-                    {founder.shortBio}
-                </p>
-            </div>
-        </article>
-    );
 }

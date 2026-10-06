@@ -6,6 +6,7 @@ import OurStory from "@/components/sections/OurStory";
 import WhyDifferent from "@/components/sections/WhyDifferent";
 import Process from "@/components/sections/Process";
 import Founders from "@/components/sections/Founders";
+import Testimonials from "@/components/sections/Testimonials";
 import CtaDual from "@/components/sections/CtaDual";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <WhyDifferent />
       <Process />
       <Founders />
+      <Testimonials />
       <CtaDual />
     </div>
   );

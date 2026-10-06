@@ -134,35 +134,58 @@ export default function ContactModal() {
                                     </a>
                                 </div>
 
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-2.5">
                                     {[
                                         {
                                             label: (
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                                     <circle cx="12" cy="12" r="4" />
                                                     <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
                                                 </svg>
-                                            ), href: "#"
+                                            ),
+                                            href: "https://www.instagram.com/creativeideaindia/",
+                                            title: "Instagram"
                                         },
                                         {
                                             label: (
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                                                 </svg>
-                                            ), href: "#"
+                                            ),
+                                            href: "https://www.facebook.com/creativeideaindia",
+                                            title: "Facebook"
                                         },
                                         {
                                             label: (
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                                                     <rect x="2" y="9" width="4" height="12" />
                                                     <circle cx="4" cy="4" r="2" />
                                                 </svg>
-                                            ), href: "#"
+                                            ),
+                                            href: "https://www.linkedin.com/company/creativeideaindia/",
+                                            title: "LinkedIn"
+                                        },
+                                        {
+                                            label: (
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none" />
+                                                </svg>
+                                            ),
+                                            href: "https://www.youtube.com/@creativeidindia",
+                                            title: "YouTube"
                                         }
                                     ].map((soc, idx) => (
-                                        <a key={idx} href={soc.href} className="w-8 h-8 rounded-full border border-brand-secondary/10 bg-brand-secondary/1 hover:bg-brand-secondary/5  transition-all duration-200 flex items-center justify-center text-brand-secondary/60">
+                                        <a
+                                            key={idx}
+                                            href={soc.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={soc.title}
+                                            className="w-8 h-8 border border-brand-secondary/10 bg-brand-secondary/1 hover:bg-brand-tertiary hover:border-brand-tertiary hover:text-white transition-all duration-200 flex items-center justify-center text-brand-secondary/60 cursor-pointer"
+                                        >
                                             {soc.label}
                                         </a>
                                     ))}
@@ -190,7 +213,7 @@ export default function ContactModal() {
                                                     value={name}
                                                     onChange={(e) => setName(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
                                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
@@ -203,7 +226,7 @@ export default function ContactModal() {
                                                     value={email}
                                                     onChange={(e) => setEmail(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
                                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
@@ -215,7 +238,7 @@ export default function ContactModal() {
                                                     value={phone}
                                                     onChange={(e) => setPhone(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
                                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>
@@ -228,7 +251,7 @@ export default function ContactModal() {
                                                     value={message}
                                                     onChange={(e) => setMessage(e.target.value)}
                                                     disabled={isSubmitting}
-                                                    className="bg-transparent border-b border-brand-secondary/10 text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
+                                                    className="bg-transparent border-b text-brand-secondary focus:outline-none focus:border-brand-tertiary py-3.5 transition-colors duration-300 text-sm font-sans w-full disabled:opacity-50"
                                                 />
                                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-tertiary transition-all duration-300 pointer-events-none" />
                                             </div>

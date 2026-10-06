@@ -222,73 +222,73 @@ export const services: ServiceItem[] = [
         id: "01",
         title: "Social Media Marketing",
         description: "Strategic social media campaigns that increase reach, engagement and brand visibility.",
-        image: "/mockups/service-social-marketing.svg"
+        image: "/assets/SocialMedia.jpg"
     },
     {
         id: "02",
         title: "Brand Strategy & Design",
         description: "Strong brand identities, creative designs and visual systems that make your brand stand out.",
-        image: "/mockups/service-brand-strategy.svg"
+        image: "/assets/BrandStra.jpg"
     },
     {
         id: "03",
         title: "Website Design & Development",
         description: "Responsive, SEO-friendly websites built for better user experience and business growth.",
-        image: "/mockups/service-website-dev.svg"
+        image: "/assets/WebDev.jpg"
     },
     {
         id: "04",
         title: "SEO & SMO",
         description: "Improve search rankings, online visibility and organic audience reach.",
-        image: "/mockups/service-seo-smo.svg"
+        image: "/assets/Seo.jpg"
     },
     {
         id: "05",
         title: "Digital Marketing",
         description: "Result-driven digital campaigns designed to attract, engage and convert customers.",
-        image: "/mockups/service-digital-marketing.svg"
+        image: "/assets/Digital.jpg"
     },
     {
         id: "06",
         title: "Printing & Packaging",
         description: "Creative printing and packaging solutions that bring your brand to life.",
-        image: "/mockups/service-printing-packaging.svg"
+        image: "/assets/Printing.jpg"
     },
     {
         id: "07",
         title: "Photography & Videography",
         description: "Professional visuals for products, brands, events and digital marketing.",
-        image: "/mockups/service-photography-videography.svg"
+        image: "/assets/Photo.jpg"
     },
     {
         id: "08",
         title: "Social Media Management",
         description: "Complete social media management with content, design, publishing and engagement.",
-        image: "/mockups/service-social-management.svg"
+        image: "/assets/SocialMedia.jpg"
     },
     {
         id: "09",
         title: "Corporate & Customized Gifting",
         description: "Branded corporate gifts and customised merchandise for every occasion.",
-        image: "/mockups/service-corporate-gifting.svg"
+        image: "/assets/Corporate.jpg"
     },
     {
         id: "10",
         title: "Event Branding",
         description: "Complete event branding solutions for impactful and memorable experiences.",
-        image: "/mockups/service-event-branding.svg"
+        image: "/assets/Event.jpg"
     },
     {
         id: "11",
         title: "ACP & Acrylic Solutions",
         description: "Custom ACP structures, acrylic signage and display solutions for businesses and events.",
-        image: "/mockups/service-acp-acrylic.svg"
+        image: "/assets/Acp.jpg"
     },
     {
         id: "12",
         title: "Videos & Animations",
         description: "Engaging promotional videos, motion graphics, animations and brand presentations.",
-        image: "/mockups/service-videos-animations.svg"
+        image: "/assets/VideoAnim.jpg"
     }
 ];
 
@@ -307,7 +307,7 @@ export const founders: Founder[] = [
         role: "Founder, CEO",
         shortBio: "Turns ideas into thoughtful digital & physical products built to solve brands problems.",
         bio: "Adarsh combines technical expertise with a founder’s mindset to turn ideas into scalable digital & physical design products, building solutions that are purposeful, practical, and made to create lasting impact.",
-        stats: [["4+", "Years"], ["25", "Brands"], ["30+", "Projects"]],
+        stats: [["10+", "Years"], ["90+", "Brands"], ["500+", "Projects"]],
         images: [
             "/assets/First.jpeg",
             "/assets/Second.png",
@@ -641,12 +641,109 @@ export const availableRoles: string[] = [
 export const footerMarqueeText =
     "HIGH-VELOCITY CREATIVE ✦ SOCIAL ADVERTISING ✦ WEB DEVELOPMENT ✦ BRAND STRATEGY ✦ ART DIRECTION ✦ ";
 
-export const legalLinks = ["Privacy Policy", "Terms of Service", "Support"];
+export interface LegalLink {
+    label: string;
+    href: string;
+}
 
-export const socialLinks = [
-    { label: "Instagram", href: "#instagram" },
-    { label: "Twitter / X", href: "#twitter" },
-    { label: "LinkedIn", href: "#linkedin" },
-    { label: "GitHub", href: "#github" },
+export const legalLinks: LegalLink[] = [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "Support", href: "/support" },
+];
+
+export interface SocialLink {
+    label: string;
+    href: string;
+}
+
+export const socialLinks: SocialLink[] = [
+    { label: "Instagram", href: "https://www.instagram.com/creativeideaindia/" },
+    { label: "Facebook", href: "https://www.facebook.com/creativeideaindia" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/creativeideaindia/" },
+    { label: "YouTube", href: "https://www.youtube.com/@creativeidindia" },
+];
+
+export const googleReviewUrl = "https://g.page/r/CePqDLv4nojuEAE/review";
+
+export interface Testimonial {
+    id: string;
+    name: string;
+    role: string;
+    company: string;
+    rating: number;
+    text: string;
+    serviceTag: string;
+    date: string;
+    initials: string;
+}
+
+export const testimonials: Testimonial[] = [
+    {
+        id: "01",
+        name: "Rahul Verma",
+        role: "Director",
+        company: "Verma Industrial Solutions",
+        rating: 5,
+        text: "Creative Idea transformed our corporate identity completely. Adarsh and his team delivered our brand strategy, new website, and product catalog with outstanding quality. Top-tier design execution in Jamshedpur.",
+        serviceTag: "BRANDING & WEB",
+        date: "Google Review",
+        initials: "RV"
+    },
+    {
+        id: "02",
+        name: "Pooja Agarwal",
+        role: "Founder",
+        company: "Bloom Organics & Lifestyle",
+        rating: 5,
+        text: "Superb experience working with Creative Idea for our product packaging and digital marketing campaigns. Their creative direction helped us increase our social reach by 3x in just two months. Highly recommended!",
+        serviceTag: "DIGITAL MARKETING",
+        date: "Google Review",
+        initials: "PA"
+    },
+    {
+        id: "03",
+        name: "Amitabh Mukherjee",
+        role: "Operations Head",
+        company: "Apex Hospitality Group",
+        rating: 5,
+        text: "From custom ACP structural signage to complete launch event branding, everything was handled in-house with unmatched speed and precision. The best creative and production agency in Jharkhand.",
+        serviceTag: "ACP & SIGNAGE",
+        date: "Google Review",
+        initials: "AM"
+    },
+    {
+        id: "04",
+        name: "Sneha Sengupta",
+        role: "Marketing Lead",
+        company: "Nova Retail & Apparel",
+        rating: 5,
+        text: "Extremely creative, founder-led approach. Adarsh understands modern visual storytelling and performance advertising better than anyone. Our festive promotional campaign was a massive success.",
+        serviceTag: "CAMPAIGN & ADS",
+        date: "Google Review",
+        initials: "SS"
+    },
+    {
+        id: "05",
+        name: "Vikram Singh",
+        role: "Managing Director",
+        company: "Singh Tech Solutions",
+        rating: 5,
+        text: "Very professional and responsive team. They handled our complete branding kit, visiting cards, corporate gifting merchandise, and responsive web design. Clear communication and reliable delivery throughout.",
+        serviceTag: "BRANDING & WEB",
+        date: "Google Review",
+        initials: "VS"
+    },
+    {
+        id: "06",
+        name: "Dr. Ananya Roy",
+        role: "Founder",
+        company: "Aura Dental & Aesthetics",
+        rating: 5,
+        text: "Excellent work on our clinic's local SEO, brand identity, and social media creatives. We noticed a major uptick in patient inquiries within weeks. Truly a 5-star creative agency to partner with!",
+        serviceTag: "SEO & SOCIAL MEDIA",
+        date: "Google Review",
+        initials: "AR"
+    }
 ];
 

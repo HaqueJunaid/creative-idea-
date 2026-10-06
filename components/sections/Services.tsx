@@ -78,7 +78,7 @@ export default function Services() {
                     scale: hoveredIndex !== null ? 1 : 0.8,
                 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="hidden md:block absolute top-0 left-0 w-75 h-90 z-20 pointer-events-none overflow-hidden border border-brand-secondary/20 shadow-2xl bg-zinc-800"
+                className="hidden md:block absolute top-0 left-0 w-75 h-90 z-20 pointer-events-none overflow-hidden shadow-xl"
             >
                 {services.map((service, index) => (
                     <motion.img
