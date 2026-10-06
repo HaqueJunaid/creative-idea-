@@ -1,5 +1,6 @@
 import ScrollReveal from "@/components/common/ScrollReveal";
 import StartProjectButton from "../common/StartProjectButton";
+import AgencyPartnersBadge from "../common/AgencyPartnersBadge";
 
 const Hero = () => {
     return (
@@ -20,16 +21,23 @@ const Hero = () => {
                 </ScrollReveal>
 
                 <ScrollReveal delay={0.15} duration={0.8}>
-                    <div className="flex flex-col md:flex-row justify-between items-start gap-12 pt-6 md:pt-12">
-                        <p className="font-sans text-md md:text-lg lg:text-xl text-brand-neutral md:max-w-2xl leading-relaxed">
-                            Creative Idea creates bold social campaigns, Outdoor branding, Wedding Graphics, Event Branding, digital experiences, and websites that turn attention into meaningful growth.
-                        </p>
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 pt-6 md:pt-12">
+                        <div className="flex flex-col gap-6 max-w-2xl">
+                            <p className="font-sans text-md md:text-lg lg:text-xl text-brand-neutral leading-relaxed">
+                                Creative Idea creates bold social campaigns, Outdoor branding, Wedding Graphics, Event Branding, digital experiences, and websites that turn attention into meaningful growth.
+                            </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                            <AgencyPartnersBadge />
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto shrink-0">
                             <StartProjectButton />
-                            <button className="px-12 py-6 bg-transparent text-brand-primary font-label text-xs font-bold tracking-widest border border-brand-primary hover:border-brand-tertiary  hover:text-brand-tertiary transition-colors duration-300">
+                            <a
+                                href="#work"
+                                className="px-12 py-6 bg-transparent text-brand-primary font-label text-xs font-bold tracking-widest border border-brand-primary hover:border-brand-tertiary hover:text-brand-tertiary transition-colors duration-300 flex items-center justify-center text-center"
+                            >
                                 VIEW OUR WORK
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </ScrollReveal>
